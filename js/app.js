@@ -24,6 +24,8 @@
 */
 
 
+const sectionList = ['section1','section2','section3'];
+
 /**
  * End Global Variables
  * Start Helper Functions
@@ -38,13 +40,47 @@
  * 
 */
 
+function navBuild() {
+  // get ul elmant, to appnd child
+  const navUl = document.getElementById('navbar__list');
+  console.log(navUl);
 // build the nav
+  //loop section
+  sectionList.forEach(section => {
+    // creat li elmant 
+    console.log(section);
+    let newLi = document.createElement("li");
+    console.log(newLi);
+    // add class
+    newLi.classList.add("Liclass");
+    // creat a elmant
+    let newA = document.createElement("a");
+    console.log(newA);
+    // add class
+    newA.classList.add("menu__link");
+    //add inar text
+    newA.innerText = section
+    // set innerHTML of the li to a
+    newLi.appendChild(newA);
+    //add class to links  
+    newLi.classList.add(section);
+    // append Child(li) to nav(ul)
+    navUl.appendChild(newLi);
+  }
+  )
+    
+  }
+  // Add class 'active' to section when near top of viewport
+  // Scroll to anchor ID using scrollTO event
+function whatSection(){
+  // 
+}
 
 
-// Add class 'active' to section when near top of viewport
+navBuild();
+let Section = whatSection();
+onSection(Section);
 
-
-// Scroll to anchor ID using scrollTO event
 
 
 /**
