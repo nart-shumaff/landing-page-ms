@@ -80,8 +80,9 @@ function whatSection(){
 
 
 navBuild();
-let Section = whatSection();
-onSection(Section);
+// let Section = whatSection();
+// onSection(Section);
+
 
 
 
