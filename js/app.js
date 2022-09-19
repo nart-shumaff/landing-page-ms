@@ -60,6 +60,8 @@ function navBuild() {
     newA.classList.add("menu__link");
     //add inar text
     newA.innerText = section
+    //add link href = (.setAttribute('href', '#url'))
+    newA.setAttribute('href',`#${section}`);
     // set innerHTML of the li to a
     newLi.appendChild(newA);
     //add class to links  
