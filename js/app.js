@@ -68,6 +68,7 @@ function navBuild() {
     newLi.classList.add(section);
     // append Child(li) to nav(ul)
     navUl.appendChild(newLi);
+
   }
 )
     
@@ -77,13 +78,47 @@ function navBuild() {
 function whatSection(){
   // 
 }
-
-
+// const sectionA = document.getElementById('section1')
+// console.log(sectionA);
+// console.log(sectionA.getBoundingClientRect());
 navBuild();
 // let Section = whatSection();
 // onSection(Section);
+//test 
+function update() {
+
+  const elemA = document.getElementById('section1');
+  const elemB = document.getElementById('section2');
+  const elemC = document.getElementById('section3');
 
 
+  const rectA = elemA.getBoundingClientRect();
+  const rectB = elemB.getBoundingClientRect();
+  const rectC = elemC.getBoundingClientRect();
+
+
+  if(rectA.y <= 0 && Math.abs(rectA.y) <= rectA.height){
+    elemA.classList.add('your-active-class');
+  }else{
+    elemA.classList.remove('your-active-class');
+  }
+
+  if(rectB.y <= 0 && Math.abs(rectB.y) <= rectB.height){
+    elemB.classList.add('your-active-class');
+  }else{
+    elemB.classList.remove('your-active-class');
+  }
+  
+  if(rectC.y <= 0 && Math.abs(rectC.y) <= rectC.height){
+    elemC.classList.add('your-active-class');
+  }else{
+    elemC.classList.remove('your-active-class');
+  }
+}
+
+document.addEventListener('scroll', update);
+update();
+//test
 
 
 /**
