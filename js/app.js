@@ -43,19 +43,19 @@ const sectionList = ['section1','section2','section3'];
 function navBuild() {
   // get ul elmant, to appnd child
   const navUl = document.getElementById('navbar__list');
-  console.log(navUl);
+  
 // build the nav
   //loop section
   sectionList.forEach(section => {
     // creat li elmant 
-    console.log(section);
+    
     let newLi = document.createElement("li");
-    console.log(newLi);
+    
     // add class
     newLi.classList.add("Liclass");
     // creat a elmant
     let newA = document.createElement("a");
-    console.log(newA);
+    
     // add class
     newA.classList.add("menu__link");
     //add inar text
@@ -97,19 +97,19 @@ function update() {
   const rectC = elemC.getBoundingClientRect();
 
 
-  if(rectA.y <= 0 && Math.abs(rectA.y) <= rectA.height){
+  if(rectA.y <= 10 && Math.abs(rectA.y) <= rectA.height){
     elemA.classList.add('your-active-class');
   }else{
     elemA.classList.remove('your-active-class');
   }
 
-  if(rectB.y <= 0 && Math.abs(rectB.y) <= rectB.height){
+  if(rectB.y <= 10 && Math.abs(rectB.y) <= rectB.height){
     elemB.classList.add('your-active-class');
   }else{
     elemB.classList.remove('your-active-class');
   }
   
-  if(rectC.y <= 0 && Math.abs(rectC.y) <= rectC.height){
+  if(rectC.y <= 10 && Math.abs(rectC.y) <= rectC.height){
     elemC.classList.add('your-active-class');
   }else{
     elemC.classList.remove('your-active-class');
