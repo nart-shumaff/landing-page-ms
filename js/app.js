@@ -69,7 +69,7 @@ function navBuild() {
     // append Child(li) to nav(ul)
     navUl.appendChild(newLi);
   }
-  )
+)
     
   }
   // Add class 'active' to section when near top of viewport
