@@ -24,7 +24,7 @@
 */
 
 
-const sectionList = ['section1','section2','section3'];
+const sectionList = ['section1','section2','section3','section4'];
 
 /**
  * End Global Variables
@@ -90,29 +90,34 @@ function update() {
   const elemA = document.getElementById('section1');
   const elemB = document.getElementById('section2');
   const elemC = document.getElementById('section3');
-
+  const elemD = document.getElementById('section4');
 
   const rectA = elemA.getBoundingClientRect();
   const rectB = elemB.getBoundingClientRect();
   const rectC = elemC.getBoundingClientRect();
+  const rectD = elemC.getBoundingClientRect();
 
-
-  if(rectA.y <= 10 && Math.abs(rectA.y) <= rectA.height){
+  if(rectA.y <= 20 && Math.abs(rectA.y) <= (rectA.height - 5)){
     elemA.classList.add('your-active-class');
   }else{
     elemA.classList.remove('your-active-class');
   }
 
-  if(rectB.y <= 10 && Math.abs(rectB.y) <= rectB.height){
+  if(rectB.y <= 20 && Math.abs(rectB.y) <= rectB.height - 5){
     elemB.classList.add('your-active-class');
   }else{
     elemB.classList.remove('your-active-class');
   }
   
-  if(rectC.y <= 10 && Math.abs(rectC.y) <= rectC.height){
+  if(rectC.y <= 20 && Math.abs(rectC.y) <= rectC.height - 5){
     elemC.classList.add('your-active-class');
   }else{
     elemC.classList.remove('your-active-class');
+  }
+  if(rectD.y <= 20 && Math.abs(rectD.y) <= rectD.height - 5){
+    elemD.classList.add('your-active-class');
+  }else{
+    elemD.classList.remove('your-active-class');
   }
 }
 
