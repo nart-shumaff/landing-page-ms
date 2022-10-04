@@ -91,11 +91,13 @@ function update() {
   const elemB = document.getElementById('section2');
   const elemC = document.getElementById('section3');
   const elemD = document.getElementById('section4');
+  const elemE = document.getElementById('section5');
 
   const rectA = elemA.getBoundingClientRect();
   const rectB = elemB.getBoundingClientRect();
   const rectC = elemC.getBoundingClientRect();
-  const rectD = elemC.getBoundingClientRect();
+  const rectD = elemD.getBoundingClientRect();
+  const rectE = elemE.getBoundingClientRect();
 
   if(rectA.y <= 20 && Math.abs(rectA.y) <= (rectA.height - 5)){
     elemA.classList.add('your-active-class');
@@ -118,6 +120,11 @@ function update() {
     elemD.classList.add('your-active-class');
   }else{
     elemD.classList.remove('your-active-class');
+  }
+  if(rectE.y <= 20 && Math.abs(rectE.y) <= rectE.height - 5){
+    elemE.classList.add('your-active-class');
+  }else{
+    elemE.classList.remove('your-active-class');
   }
 }
 
