@@ -26,7 +26,7 @@
     a data attribute that will populate the li node.
     Adding more sections will automatically populate nav.
     The first section is set to active class by default -->
-    <section id="section1" data-nav="Section 1" >
+    <section id="section1" data-nav="Section 1">
       <div class="landing__container">
         <h2>Section 1</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.</p>
@@ -58,6 +58,48 @@
         <p>Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.</p>
       </div>
     </section>
+    <form id="form" action="post">
+      <div class="inputs__container">
+        <div class="input__container pading--input">
+          <label name="content" for="content">content</label>
+          <!-- type="text-box" ?  -->
+          <input name="content" type="text" id="content" class="input--" />
+          <div class="message" id="content-check">
+            <p class="err-message" id="contentMessage">hi im err</p>
+          </div>
+        </div>
+        <div class="input__container pading--input">
+          <label name="time" for="time">time</label>
+          <input name="time" type="text" id="time" class="input--" />
+          <div class="message" id="time-check">
+            <p class="err-message" id="timeMessage">hi</p>
+            <i class="fa-solid fa-square-check"></i>
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </div>
+        <div class="input__container pading--input">
+          <label name="to-who" for="to-who">to who</label>
+          <!-- add radio for phone or text(name)-->
+          <input name="to-who" type="text" id="to-who" class="input--" />
+          <div class="message" id="to-who-check">
+            <p class="err-message" id="to-whoMessage">hi</p>
+            <i class="fa-solid fa-square-check"></i>
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </div>
+        <!-- date type -->
+
+        <!-- <div class="input__container">
+          <label for="myDate">When are you available this summer?</label>
+<input type="date" name="myDate" min="2013-06-01" max="2013-08-31" step="7" id="myDate">
+        </div> -->
+
+        <!--  -->
+      </div>
+      <div class="submit-bt">
+        <input class="submit" type="submit" value="Submit" />
+      </div>
+    </form>
   </main>
   <footer class="page__footer">
     <p>&copy Udacity</p>
