@@ -19,7 +19,9 @@ For specific, detailed instructions, look at the project instructions in the Uda
 
 ## technologies-used
 
-HTML, CSS, JavaScript
+HTML
+CSS
+JavaScript
 
 ## author's-name
 
