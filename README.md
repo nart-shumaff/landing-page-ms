@@ -2,10 +2,10 @@
 
 ## Table of Contents
 
-- [project description](#project description)
+- [project-description](#project description)
 - [Instructions](#instructions)
-- [technologies used](#technologies used)
-- [author's name](#author's name)
+- [technologies-used](#technologies used)
+- [author's-name](#author's name)
 
 ## project description
 
