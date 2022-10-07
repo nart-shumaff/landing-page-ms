@@ -24,7 +24,7 @@
 */
 
 
-const sectionList = ['section1','section2','section3','section4'];
+const sectionList = ['section1','section2','section3','section4','section5'];
 
 /**
  * End Global Variables
@@ -85,8 +85,21 @@ navBuild();
 // let Section = whatSection();
 // onSection(Section);
 //test 
-function update() {
 
+
+// const elemList = [];
+// const rectList = [];
+//   sectionList.forEach(section => {
+//     let elem = document.getElementById(`${section}`);
+//     elemList.push(elem);
+//     rectList.push(elem.getBoundingClientRect())
+//     console.log(`${section}`)
+//   })
+
+
+
+function update() {
+  
   const elemA = document.getElementById('section1');
   const elemB = document.getElementById('section2');
   const elemC = document.getElementById('section3');
@@ -103,6 +116,7 @@ function update() {
     elemA.classList.add('your-active-class');
   }else{
     elemA.classList.remove('your-active-class');
+
   }
 
   if(rectB.y <= 20 && Math.abs(rectB.y) <= rectB.height - 5){
