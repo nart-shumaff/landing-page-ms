@@ -91,6 +91,7 @@ function navBuild() {
 // console.log(sectionA);
 // console.log(sectionA.getBoundingClientRect());
 navBuild();
+const navLinksList = document.querySelectorAll('.menu__link');
 // let Section = whatSection();
 // onSection(Section);
 //test 
@@ -100,7 +101,7 @@ navBuild();
 // const elemList = [];
 // const rectList = [];
 //   sectionList.forEach(section => {
-//     let elem = document.getElementById(`${section}`);
+//     let elem = document.getElementById(`${section.dataset.nav}`);
 //     elemList.push(elem);
 //     rectList.push(elem.getBoundingClientRect())
 //     console.log(`${section}`)
@@ -108,62 +109,99 @@ navBuild();
 
 
 
-function update() {
-  // get all section element
-  const elemA = document.getElementById('section1');
-  const elemB = document.getElementById('section2');
-  const elemC = document.getElementById('section3');
-  const elemD = document.getElementById('section4');
-  const elemE = document.getElementById('section5');
-  // get element boundingclient in to var's
-  const rectA = elemA.getBoundingClientRect();
-  const rectB = elemB.getBoundingClientRect();
-  const rectC = elemC.getBoundingClientRect();
-  const rectD = elemD.getBoundingClientRect();
-  const rectE = elemE.getBoundingClientRect();
-  // get nav elements 
+// function update() {
+//   // get all section element
+//   const elemA = document.getElementById('section1');
+//   const elemB = document.getElementById('section2');
+//   const elemC = document.getElementById('section3');
+//   const elemD = document.getElementById('section4');
+//   const elemE = document.getElementById('section5');
+//   // get element boundingclient in to var's
+//   const rectA = elemA.getBoundingClientRect();
+//   const rectB = elemB.getBoundingClientRect();
+//   const rectC = elemC.getBoundingClientRect();
+//   const rectD = elemD.getBoundingClientRect();
+//   const rectE = elemE.getBoundingClientRect();
+//   // get nav elements 
 
 
 
-  // if element is in view add active-class else remove
-  if(rectA.y <= 20 && Math.abs(rectA.y) <= (rectA.height - 5)){
-    elemA.classList.add('your-active-class');
+//   // if element is in view add active-class else remove
+//   if(rectA.y <= 20 && Math.abs(rectA.y) <= (rectA.height - 5)){
+//     elemA.classList.add('your-active-class');
     
-  }else{
-    elemA.classList.remove('your-active-class');
+//   }else{
+//     elemA.classList.remove('your-active-class');
 
+//   }
+//   // if element is in view add active-class else remove
+//   if(rectB.y <= 20 && Math.abs(rectB.y) <= rectB.height - 5){
+//     elemB.classList.add('your-active-class');
+//   }else{
+//     elemB.classList.remove('your-active-class');
+//   }
+//   // if element is in view add active-class else remove
+//   if(rectC.y <= 20 && Math.abs(rectC.y) <= rectC.height - 5){
+//     elemC.classList.add('your-active-class');
+//   }else{
+//     elemC.classList.remove('your-active-class');
+//   }
+//   // if element is in view add active-class else remove
+//   if(rectD.y <= 20 && Math.abs(rectD.y) <= rectD.height - 5){
+//     elemD.classList.add('your-active-class');
+//   }else{
+//     elemD.classList.remove('your-active-class');
+//   }
+//   // if element is in view add active-class else remove
+//   if(rectE.y <= 0 && Math.abs(rectE.y) <= rectE.height - 5){
+//     elemE.classList.add('your-active-class');
+//   }else{
+//     elemE.classList.remove('your-active-class');
+//   }
+// }
+document.addEventListener('scroll', update);
+
+function update(){
+  //get all section element
+  sectionList.forEach((section,indxe) => {
+      
+        
+        const navlink = navLinksList[indxe];
+        const clientRect = navlink.getBoundingClientRect()
+        // document.querySelectorAll('.active , .your-active-class').forEach((el)=>{
+        //   // el.classList.remove('active','your-active-class');
+        // })
+        // position.top <= 150 && position.bottom >= 150
+        // scrollY > sectionTop && scrollY <= sectionTop + sectionHeight
+        const scrollY = window.pageYOffset;
+        const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - 50;
+        const sectionHeight = section.offsetHeight;
+
+        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+
+            console.log('active' , section)
+            navlink.classList.add('active');
+            section.classList.add('your-active-class');  
+          }else{
+            navlink.classList.remove('active');
+            section.classList.remove('your-active-class');  
+        
+}})
   }
-  // if element is in view add active-class else remove
-  if(rectB.y <= 20 && Math.abs(rectB.y) <= rectB.height - 5){
-    elemB.classList.add('your-active-class');
-  }else{
-    elemB.classList.remove('your-active-class');
-  }
-  // if element is in view add active-class else remove
-  if(rectC.y <= 20 && Math.abs(rectC.y) <= rectC.height - 5){
-    elemC.classList.add('your-active-class');
-  }else{
-    elemC.classList.remove('your-active-class');
-  }
-  // if element is in view add active-class else remove
-  if(rectD.y <= 20 && Math.abs(rectD.y) <= rectD.height - 5){
-    elemD.classList.add('your-active-class');
-  }else{
-    elemD.classList.remove('your-active-class');
-  }
-  // if element is in view add active-class else remove
-  if(rectE.y <= 20 && Math.abs(rectE.y) <= rectE.height - 5){
-    elemE.classList.add('your-active-class');
-  }else{
-    elemE.classList.remove('your-active-class');
-  }
-}
+  // get element boundingclient in to var's
+  
+  // get nav elements 
+  update();
+
 
 // do update if scroll 
-document.addEventListener('scroll', update);
-update();
-//test
 
+
+//test
+document.addEventListener('submit', (e)=>{
+  e.preventDefault();
+  alert('hi');
+})
 
 /**
  * End Main Functions

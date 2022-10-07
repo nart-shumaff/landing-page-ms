@@ -16,7 +16,10 @@
 .test {
   background-color: black;
 }
-
+form{
+  padding: 120px 0 ;
+  margin: 50px auto;
+}
 /* submit style */
 .submit-bt {
   display: flex;
@@ -77,10 +80,10 @@ form {
 .input__container label {
   display: block;
 }
-.input--err {
+.input--:invalid{
   padding: 0;
   display: block;
-  border: 1px solid red;
+  border: 6px solid red;
   border-radius: 0.2rem;
 }
 
