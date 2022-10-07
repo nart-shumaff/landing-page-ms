@@ -22,9 +22,10 @@
  * Define Global Variables
  * 
 */
+// 
 
-
-const sectionList = ['section1','section2','section3','section4','section5'];
+//const sectionList = ['section1','section2','section3','section4','section5'];
+const sectionList = document.querySelectorAll('[data-nav]');
 
 /**
  * End Global Variables
@@ -41,6 +42,7 @@ const sectionList = ['section1','section2','section3','section4','section5'];
 */
 
 function navBuild() {
+
   // get ul elmant, to appnd child
   const navUl = document.getElementById('navbar__list');
   
@@ -59,15 +61,24 @@ function navBuild() {
     // add class
     newA.classList.add("menu__link");
     //add inar text
-    newA.innerText = section
+    newA.innerText = section.dataset.nav;
     //add link href = (.setAttribute('href', '#url'))
-    newA.setAttribute('href',`#${section}`);
+    //newA.setAttribute('href',`#${section.id}`);
+
+    newA.addEventListener('click',(e) => {
+      //e.preventDefault();
+      console.log(section);
+      section.scrollIntoView({       
+        behavior : 'smooth'
+      });
+    })
     // set innerHTML of the li to a
     newLi.appendChild(newA);
     //add class to links  
-    newLi.classList.add(section);
+    //newLi.classList.add(section.dataset.nav);
     // append Child(li) to nav(ul)
     navUl.appendChild(newLi);
+    console.log(newLi)
 
   }
 )
@@ -84,7 +95,8 @@ navBuild();
 // onSection(Section);
 //test 
 
-
+// // get all section element and element boundingclient 
+// // in an arry
 // const elemList = [];
 // const rectList = [];
 //   sectionList.forEach(section => {
@@ -109,9 +121,14 @@ function update() {
   const rectC = elemC.getBoundingClientRect();
   const rectD = elemD.getBoundingClientRect();
   const rectE = elemE.getBoundingClientRect();
+  // get nav elements 
+
+
+
   // if element is in view add active-class else remove
   if(rectA.y <= 20 && Math.abs(rectA.y) <= (rectA.height - 5)){
     elemA.classList.add('your-active-class');
+    
   }else{
     elemA.classList.remove('your-active-class');
 
