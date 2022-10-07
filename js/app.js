@@ -75,9 +75,7 @@ function navBuild() {
   }
   // Add class 'active' to section when near top of viewport
   // Scroll to anchor ID using scrollTO event
-function whatSection(){
-  // 
-}
+
 // const sectionA = document.getElementById('section1')
 // console.log(sectionA);
 // console.log(sectionA.getBoundingClientRect());
@@ -99,42 +97,44 @@ navBuild();
 
 
 function update() {
-  
+  // get all section element
   const elemA = document.getElementById('section1');
   const elemB = document.getElementById('section2');
   const elemC = document.getElementById('section3');
   const elemD = document.getElementById('section4');
   const elemE = document.getElementById('section5');
-
+  // get element boundingclient in to var's
   const rectA = elemA.getBoundingClientRect();
   const rectB = elemB.getBoundingClientRect();
   const rectC = elemC.getBoundingClientRect();
   const rectD = elemD.getBoundingClientRect();
   const rectE = elemE.getBoundingClientRect();
-
+  // if element is in view add active-class else remove
   if(rectA.y <= 20 && Math.abs(rectA.y) <= (rectA.height - 5)){
     elemA.classList.add('your-active-class');
   }else{
     elemA.classList.remove('your-active-class');
 
   }
-
+  // if element is in view add active-class else remove
   if(rectB.y <= 20 && Math.abs(rectB.y) <= rectB.height - 5){
     elemB.classList.add('your-active-class');
   }else{
     elemB.classList.remove('your-active-class');
   }
-  
+  // if element is in view add active-class else remove
   if(rectC.y <= 20 && Math.abs(rectC.y) <= rectC.height - 5){
     elemC.classList.add('your-active-class');
   }else{
     elemC.classList.remove('your-active-class');
   }
+  // if element is in view add active-class else remove
   if(rectD.y <= 20 && Math.abs(rectD.y) <= rectD.height - 5){
     elemD.classList.add('your-active-class');
   }else{
     elemD.classList.remove('your-active-class');
   }
+  // if element is in view add active-class else remove
   if(rectE.y <= 20 && Math.abs(rectE.y) <= rectE.height - 5){
     elemE.classList.add('your-active-class');
   }else{
@@ -142,6 +142,7 @@ function update() {
   }
 }
 
+// do update if scroll 
 document.addEventListener('scroll', update);
 update();
 //test
